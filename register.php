@@ -69,6 +69,8 @@ if(isset($_POST['submit'])){
 
    <section class="form-container">
 
+    //Data yang dikirim harus dienkripsi dengan metode multipart/form-data. Yang artinya bahwa data yang berisi form tersebut akan dipecah menjadi beberapa bagian (multipart),
+    //untuk kemudian dikirimkan ke server
    <form action="" enctype="multipart/form-data" method="POST">
       <h3>register now</h3>
       <input type="text" name="name" class="box" placeholder="enter your name" required>
