@@ -37,7 +37,7 @@ if(isset($_POST['submit'])){
    // execute untuk menjalankan query
    $select->execute([$email]);
    
-   RowCount m3nampilkann hasil query
+   //RowCount m3nampilkann hasil query
    if($select->rowCount() > 0){
       $message[] = 'user email already exist!';
    }else{
