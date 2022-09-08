@@ -8,6 +8,7 @@ include 'config.php';
 // variabel telah didefenisikan, dan false jika variabel tersebut belum dibuat.
 if(isset($_POST['submit'])){
 
+//$_POST berfungsi untuk memanggil data yang telah diinputkan agar bisa ditampilkan di file action.
    $name = $_POST['name'];
    $name = filter_var($name,FILTER_SANITIZE_STRING);
 
