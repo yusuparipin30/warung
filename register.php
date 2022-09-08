@@ -11,6 +11,9 @@ if(isset($_POST['submit'])){
    $name = $_POST['name'];
    $name = filter_var($name,FILTER_SANITIZE_STRING);
 
+   //FILTER_SANITIZE_STRING filter untuk menghilangkan karakter yang tidak diinginkan atau dikodekan.
+   //filter menghapus aplikasi yang berpotensi data yang berbahaya.
+   //Hal ini digunakan untuk menghapus label dan menghapus karakter yang tidak diinginkan atau dikodekan.
    $email = $_POST['email'];
    $email = filter_var($email,FILTER_SANITIZE_STRING);
 
