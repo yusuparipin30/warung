@@ -29,9 +29,15 @@ if(isset($_POST['submit'])){
    $image_tmp_name = $_FILES ['image']['tmp_name'];
    $image_folder = 'uploaded_img/'.$image;
 
-   $select = $conn->prepare("SELECT * FROM `users` WHERE email = ?");
-   $select->execute([$email]);
 
+   //Prepared statements adalah sebuah fitur yang disediakan MySQL (dan juga beberapa aplikasi database lainnya), dimana kita bisa mengirim query (perintah) secara terpisah antara query inti dengan “data” dari query. Tujuannya, 
+   //agar query menjadi lebih aman dan cepat (jika perintah yang sama akan digunakan beberapa kali).
+   $select = $conn->prepare("SELECT * FROM `users` WHERE email = ?");
+   
+   // execute untuk menjalankan query
+   $select->execute([$email]);
+   
+   RowCount m3nampilkann hasil query
    if($select->rowCount() > 0){
       $message[] = 'user email already exist!';
    }else{
